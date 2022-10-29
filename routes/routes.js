@@ -18,9 +18,8 @@ router.put('/clientes/actualizar', API.PUT_UPDATE_CLIENTE);
 router.put('/destinatarios/realizar', API.PUT_UPDATE_DESTINATARIO);
 
 //delete
-router.delete('/clientes/eliminar', API.DELETE_CLIENTE);
-router.delete('/destinatarios/eliminar', API.DELETE_DESTINATARIO);
-router.delete('/destinatarios/eliminar', API.DELETE_DESTINATARIO);
+router.delete('/clientes/eliminar/:id', API.DELETE_CLIENTE);
+router.delete('/destinatarios/eliminar/:id', API.DELETE_DESTINATARIO);
 
 //block
 router.lock('/clientes/:id', API.LOCK_CLIENTE);

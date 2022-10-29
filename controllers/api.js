@@ -243,7 +243,7 @@ module.exports = class API {
             if(req.headers.authorization != "Bearer 4329616538"){
                 return res.status(200).send('No Autorizado')
             }
-            let { id } = req.body;
+            let { id } = req.params;
             let destinatario = await destinatarios.findOne({ _id: id });
             let cuentasDestinatario = destinatario.cuentas.slice();
 
@@ -252,7 +252,7 @@ module.exports = class API {
             }
 
             await destinatarios.deleteOne({ _id: id });
-            res.status(200).send('destinatario eliminado.')
+            res.status(200).json({ menssage: 'Destinatario Eliminado' })
 
         } catch (err) {
             return res.status(200).json({ message: err.message });
